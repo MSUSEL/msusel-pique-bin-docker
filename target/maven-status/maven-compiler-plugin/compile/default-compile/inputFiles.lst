@@ -1,0 +1,13 @@
+/home/derek/msusel/msusel-pique-bin/src/main/java/evaluator/WeightedAverageEvaluator.java
+/home/derek/msusel/msusel-pique-bin/src/main/java/evaluator/BinaryUtility.java
+/home/derek/msusel/msusel-pique-bin/src/main/java/piquebinaries/runnable/QualityModelDeriver.java
+/home/derek/msusel/msusel-pique-bin/src/main/java/evaluator/BinaryNormalizer.java
+/home/derek/msusel/msusel-pique-bin/src/main/java/utilities/helperFunctions.java
+/home/derek/msusel/msusel-pique-bin/src/main/java/evaluator/QualityAspectEvaluator.java
+/home/derek/msusel/msusel-pique-bin/src/main/java/tool/CVEBinToolWrapper.java
+/home/derek/msusel/msusel-pique-bin/src/main/java/piquebinaries/runnable/SingleProjectEvaluator.java
+/home/derek/msusel/msusel-pique-bin/src/main/java/calibration/BinaryCWEWeighter.java
+/home/derek/msusel/msusel-pique-bin/src/main/java/piquebinaries/runnable/Wrapper.java
+/home/derek/msusel/msusel-pique-bin/src/main/java/tool/YaraRulesToolWrapper.java
+/home/derek/msusel/msusel-pique-bin/src/main/java/tool/CWECheckerToolWrapper.java
+/home/derek/msusel/msusel-pique-bin/src/main/java/evaluator/PriorityMeasureEvaluator.java

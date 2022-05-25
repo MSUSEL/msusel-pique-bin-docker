@@ -1,0 +1,13 @@
+piquebinaries/runnable/QualityModelDeriver.class
+tool/CVEBinToolWrapper.class
+piquebinaries/runnable/Wrapper.class
+evaluator/WeightedAverageEvaluator.class
+utilities/helperFunctions.class
+tool/YaraRulesToolWrapper.class
+piquebinaries/runnable/SingleProjectEvaluator.class
+evaluator/BinaryUtility.class
+tool/CWECheckerToolWrapper.class
+evaluator/BinaryNormalizer.class
+calibration/BinaryCWEWeighter.class
+evaluator/PriorityMeasureEvaluator.class
+evaluator/QualityAspectEvaluator.class

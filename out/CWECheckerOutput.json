@@ -1,0 +1,11 @@
+[
+  {
+    "name": "CWE215",
+    "version": "0.2",
+    "addresses": [],
+    "tids": [],
+    "symbols": [],
+    "other": [],
+    "description": "(Information Exposure Through Debug Information) The binary contains debug symbols."
+  }
+]

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="4" failures="1" name="toolTests.YaraRulesToolWrapperTest" time="32.085" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="java.vm.version" value="11.0.14+9-Ubuntu-0ubuntu2.20.04"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/derek/msusel/msusel-pique-bin"/>
+    <property name="java.vm.vendor" value="Ubuntu"/>
+    <property name="java.vendor.url" value="https://ubuntu.com/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/derek/msusel/msusel-pique-bin"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.runtime.version" value="11.0.14+9-Ubuntu-0ubuntu2.20.04"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="55.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="5.8.0-50-generic"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/home/derek"/>
+    <property name="user.timezone" value="America/Denver"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="user.name" value="derek"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
+    <property name="java.home" value="/usr/lib/jvm/java-11-openjdk-amd64"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="11.0.14"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="java.vendor" value="Ubuntu"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.version.date" value="2022-01-18"/>
+    <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-lts"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="toolTests.YaraRulesToolWrapperTest" name="ToolShouldHaveConsistentFindings" time="22.029"/>
+  <testcase classname="toolTests.YaraRulesToolWrapperTest" name="ToolShouldHaveFindingsOnBinaryWithRuleViolations" time="4.88"/>
+  <testcase classname="toolTests.YaraRulesToolWrapperTest" name="ToolShouldReturnNoFindingsIfNoBinariesExist" time="0.065"/>
+  <testcase classname="toolTests.YaraRulesToolWrapperTest" name="ToolShouldHaveNoFindingsOnSimpleCleanBinary" time="5.111">
+    <failure type="java.lang.AssertionError">java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.fail(Assert.java:96)
+	at toolTests.YaraRulesToolWrapperTest.ToolShouldHaveNoFindingsOnSimpleCleanBinary(YaraRulesToolWrapperTest.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</failure>
+    <system-out>[
+    {
+        &quot;Id&quot;: &quot;sha256:01452ee2a79e57addb9d2cf6558d765c15a69b6ef63370e39352b48de9016a9c&quot;,
+        &quot;RepoTags&quot;: [
+            &quot;yara-rules:latest&quot;
+        ],
+        &quot;RepoDigests&quot;: [],
+        &quot;Parent&quot;: &quot;sha256:78a8cd04a9d0a6262da65131fda713dbbbe63516732a6efa66740d10895ce60e&quot;,
+        &quot;Comment&quot;: &quot;&quot;,
+        &quot;Created&quot;: &quot;2022-03-09T14:58:00.072532736Z&quot;,
+        &quot;Container&quot;: &quot;6da31507bd8a061744d3757c3761182143c38d356173769cad61295618fa718c&quot;,
+        &quot;ContainerConfig&quot;: {
+            &quot;Hostname&quot;: &quot;&quot;,
+            &quot;Domainname&quot;: &quot;&quot;,
+            &quot;User&quot;: &quot;&quot;,
+            &quot;AttachStdin&quot;: false,
+            &quot;AttachStdout&quot;: false,
+            &quot;AttachStderr&quot;: false,
+            &quot;Tty&quot;: false,
+            &quot;OpenStdin&quot;: false,
+            &quot;StdinOnce&quot;: false,
+            &quot;Env&quot;: [
+                &quot;PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;,
+                &quot;YARA_VERSION=4.1.2&quot;,
+                &quot;YARA_PY_VERSION=4.1.2&quot;
+            ],
+            &quot;Cmd&quot;: [
+                &quot;/bin/sh&quot;,
+                &quot;-c&quot;,
+                &quot;apk add git \t&amp;&amp; git clone https://github.com/Yara-Rules/rules.git&quot;
+            ],
+            &quot;Image&quot;: &quot;sha256:78a8cd04a9d0a6262da65131fda713dbbbe63516732a6efa66740d10895ce60e&quot;,
+            &quot;Volumes&quot;: {
+                &quot;/malware&quot;: {},
+                &quot;/rules&quot;: {}
+            },
+            &quot;WorkingDir&quot;: &quot;/malware&quot;,
+            &quot;Entrypoint&quot;: null,
+            &quot;OnBuild&quot;: null,
+            &quot;Labels&quot;: {
+                &quot;maintainer&quot;: &quot;https://github.com/blacktop&quot;,
+                &quot;org.opencontainers.image.created&quot;: &quot;2021-10-16T22:07:01.607Z&quot;,
+                &quot;org.opencontainers.image.description&quot;: &quot;Yara Dockerfile&quot;,
+                &quot;org.opencontainers.image.licenses&quot;: &quot;MIT&quot;,
+                &quot;org.opencontainers.image.revision&quot;: &quot;7bef5f4b02a124161cfe9cdb118247a7bff80cd8&quot;,
+                &quot;org.opencontainers.image.source&quot;: &quot;https://github.com/blacktop/docker-yara&quot;,
+                &quot;org.opencontainers.image.title&quot;: &quot;docker-yara&quot;,
+                &quot;org.opencontainers.image.url&quot;: &quot;https://github.com/blacktop/docker-yara&quot;,
+                &quot;org.opencontainers.image.version&quot;: &quot;master&quot;
+            }
+        },
+        &quot;DockerVersion&quot;: &quot;20.10.11&quot;,
+        &quot;Author&quot;: &quot;&quot;,
+        &quot;Config&quot;: {
+            &quot;Hostname&quot;: &quot;&quot;,
+            &quot;Domainname&quot;: &quot;&quot;,
+            &quot;User&quot;: &quot;&quot;,
+            &quot;AttachStdin&quot;: false,
+            &quot;AttachStdout&quot;: false,
+            &quot;AttachStderr&quot;: false,
+            &quot;Tty&quot;: false,
+            &quot;OpenStdin&quot;: false,
+            &quot;StdinOnce&quot;: false,
+            &quot;Env&quot;: [
+                &quot;PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;,
+                &quot;YARA_VERSION=4.1.2&quot;,
+                &quot;YARA_PY_VERSION=4.1.2&quot;
+            ],
+            &quot;Cmd&quot;: [
+                &quot;--help&quot;
+            ],
+            &quot;ArgsEscaped&quot;: true,
+            &quot;Image&quot;: &quot;sha256:78a8cd04a9d0a6262da65131fda713dbbbe63516732a6efa66740d10895ce60e&quot;,
+            &quot;Volumes&quot;: {
+                &quot;/malware&quot;: {},
+                &quot;/rules&quot;: {}
+            },
+            &quot;WorkingDir&quot;: &quot;/malware&quot;,
+            &quot;Entrypoint&quot;: [
+                &quot;su-exec&quot;,
+                &quot;nobody&quot;,
+                &quot;/sbin/tini&quot;,
+                &quot;--&quot;,
+                &quot;yara&quot;
+            ],
+            &quot;OnBuild&quot;: null,
+            &quot;Labels&quot;: {
+                &quot;maintainer&quot;: &quot;https://github.com/blacktop&quot;,
+                &quot;org.opencontainers.image.created&quot;: &quot;2021-10-16T22:07:01.607Z&quot;,
+                &quot;org.opencontainers.image.description&quot;: &quot;Yara Dockerfile&quot;,
+                &quot;org.opencontainers.image.licenses&quot;: &quot;MIT&quot;,
+                &quot;org.opencontainers.image.revision&quot;: &quot;7bef5f4b02a124161cfe9cdb118247a7bff80cd8&quot;,
+                &quot;org.opencontainers.image.source&quot;: &quot;https://github.com/blacktop/docker-yara&quot;,
+                &quot;org.opencontainers.image.title&quot;: &quot;docker-yara&quot;,
+                &quot;org.opencontainers.image.url&quot;: &quot;https://github.com/blacktop/docker-yara&quot;,
+                &quot;org.opencontainers.image.version&quot;: &quot;master&quot;
+            }
+        },
+        &quot;Architecture&quot;: &quot;amd64&quot;,
+        &quot;Os&quot;: &quot;linux&quot;,
+        &quot;Size&quot;: 78740359,
+        &quot;VirtualSize&quot;: 78740359,
+        &quot;GraphDriver&quot;: {
+            &quot;Data&quot;: {
+                &quot;LowerDir&quot;: &quot;/var/snap/docker/common/var-lib-docker/overlay2/7f3a60940c842e7064840a912e402927395e658bf255014f0e8d192b4c42b515/diff:/var/snap/docker/common/var-lib-docker/overlay2/2422f8c2c527af603e3e0b3aa65dbbec165ecb33adb6c41252988bfded13d4da/diff:/var/snap/docker/common/var-lib-docker/overlay2/6a664ff92d4f452d665931ed614bd27cc56abda916c299698de5c5ef60c7cccb/diff:/var/snap/docker/common/var-lib-docker/overlay2/385e3ce3b75f89912a1760531f200491cc8faf4a59e8296640c57ba58e8f6333/diff&quot;,
+                &quot;MergedDir&quot;: &quot;/var/snap/docker/common/var-lib-docker/overlay2/fa6576b1a95366f4e938aaa4bdf1244618ad986a6913da8db1b8dac5746ce906/merged&quot;,
+                &quot;UpperDir&quot;: &quot;/var/snap/docker/common/var-lib-docker/overlay2/fa6576b1a95366f4e938aaa4bdf1244618ad986a6913da8db1b8dac5746ce906/diff&quot;,
+                &quot;WorkDir&quot;: &quot;/var/snap/docker/common/var-lib-docker/overlay2/fa6576b1a95366f4e938aaa4bdf1244618ad986a6913da8db1b8dac5746ce906/work&quot;
+            },
+            &quot;Name&quot;: &quot;overlay2&quot;
+        },
+        &quot;RootFS&quot;: {
+            &quot;Type&quot;: &quot;layers&quot;,
+            &quot;Layers&quot;: [
+                &quot;sha256:e2eb06d8af8218cfec8210147357a68b7e13f7c485b991c288c2d01dc228bb68&quot;,
+                &quot;sha256:3e9f3c02a4637959eeb203c78e324120c05b478b08a6e07451f6dea0b879a8a5&quot;,
+                &quot;sha256:2cf5a2d92104d136e2e704ef4b8167a89ab71dc2db3358e3e632174906b1a343&quot;,
+                &quot;sha256:83347626c4e8d33493e381b177d9bb60b986fa7b85639f4243b53cda9359259b&quot;,
+                &quot;sha256:e78ced65e418f7677c517eaeb8891157c39587da449c7b7477d83ee8c0aad056&quot;
+            ]
+        },
+        &quot;Metadata&quot;: {
+            &quot;LastTagTime&quot;: &quot;2022-03-09T07:58:00.102360917-07:00&quot;
+        }
+    }
+]
+yara-rules Running...
+error: could not open file: rules/crypto_index.yar
+error: could not open file: rules/webshells_index.yar
+error: could not open file: rules/exploit_kits_index.yar
+error: could not open file: rules/maldocs_index.yar
+error: could not open file: rules/packers_index.yar
+error: could not open file: rules/email_index.yar
+error: could not open file: rules/capabilities_index.yar
+error: could not open file: rules/malware_index.yar
+error: could not open file: rules/antidebug_antivm_index.yar
+yara-rules Parsing Analysis...
+</system-out>
+  </testcase>
+</testsuite>
