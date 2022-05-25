@@ -128,52 +128,29 @@ public class YaraRulesToolWrapper extends Tool implements ITool {
 	}
 
 	/**
-	 * In the current state of things, no initialization is needed for this tool, as the executable and rules are 
+	 * In the current state of things, no initialization is needed for this tool, as the executable and rules are
 	 * included in the repository.
 	 */
 	@Override
 	public Path initialize(Path toolRoot) {
-		
+
 		//check if docker image has been built already
-		final String[] imageCheck = {"docker", "image", "inspect", "blacktop/yara:latest"};
-		String check = "";
+		final String[] imageCheck = {"yara", "-v"};
 		try {
-			check = helperFunctions.getOutputFromProgram(imageCheck, LOGGER);
+			helperFunctions.getOutputFromProgram(imageCheck, LOGGER);
 		}
 		catch (IOException e) {
 			LOGGER.error("Error initializing yara.");
 			LOGGER.error(e.toString());
 			e.printStackTrace();
 		}
-		
-		if (check.contains("Error: No such image")) { //we haven't built the image yet, need to build
-			final String cmd[] = {"docker", 
-					"build",
-					"-t", this.getName(),
-					toolRoot.toAbsolutePath().toString()};
-			try {
-				helperFunctions.getOutputFromProgram(cmd, LOGGER);
-			}
-			catch (IOException e) {
-				LOGGER.error("Error building docker image for yara.");
-				LOGGER.error(e.toString());
-				e.printStackTrace();
-			}
-		}
-		
 		return toolRoot;
 	}
 	
 	private String runYaraRules(String ruleName, Path projectLocation) {
 
-		String[] cmd = {"docker", "run", "--rm", 
-				"-v",
-				//"\"$(pwd)/rules\":/rules:ro",
-				"/home/derek/msusel/msusel-pique-bin/rules:/rules:ro",
-				//need to get parent I think?
-				"-v", projectLocation.toAbsolutePath().getParent()+":/malware:ro",
-				"blacktop/yara:latest",
-				"/rules/"+ruleName+"_index.yar",
+		String[] cmd = {"yara",
+				"/home/rules/"+ruleName+"_index.yar",
 				projectLocation.toFile().getName()};
 
 		LOGGER.info(Arrays.toString(cmd));

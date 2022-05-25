@@ -26,6 +26,8 @@ RUN apt-get update && apt-get install -y \
 	git \
 	## cwe-checker
 	unzip \
+	#java 11 for ghidra
+	openjdk-11-jdk \
 	## cve-bin-tool
 	python3-pip
 
@@ -56,6 +58,8 @@ RUN make all GHIDRA_PATH=/ghidra
 ## cve-bin-tool installs
 WORKDIR "/home"
 RUN pip install cve-bin-tool
+# update cve database upon image build
+#RUN cve-bin-tool -u now
 
 ## yara installs
 # taken from https://yara.readthedocs.io/en/stable/gettingstarted.html#compiling-and-installing-yara
@@ -68,6 +72,9 @@ RUN ./configure
 RUN make
 RUN make install
 RUN make check
+# configure libyara links
+RUN echo "/usr/local/lib" >> /etc/ld.so.config
+RUN ldconfig
 
 WORKDIR "/home" 
 ## yara rules
@@ -89,3 +96,6 @@ RUN mvn install
 
 ## pique bin (docker) install
 WORKDIR "/home"
+RUN git clone https://github.com/MSUSEL/msusel-pique-bin-docker
+WORKDIR "/home/msusel-pique-bin-docker"
+RUN mvn package

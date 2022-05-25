@@ -155,8 +155,8 @@ public class CVEBinToolWrapper extends Tool implements ITool  {
 		 */
 		@Override
 		public Path initialize(Path toolRoot) {
-			final String[] cmd = {"python", "-m", "pip", "install", "cve-bin-tool==2.1.post1"}; 
-			
+			final String[] cmd = {"cve-bin-tool", "-V"};
+
 			try {
 				helperFunctions.getOutputFromProgram(cmd, LOGGER);
 			} catch (IOException e) {
@@ -168,11 +168,7 @@ public class CVEBinToolWrapper extends Tool implements ITool  {
 			return toolRoot;
 		}
 
-		//private ArrayList<String> identifyCWEs() {
-			// identify all relevant diagnostics from the model structure
-		//	ArrayList<String> cweList = new ArrayList<String>();	
-		//}
-		
+
 		//maps low-critical to numeric values based on the highest value for each range.
 		private Integer severityToInt(String severity) {
 			Integer severityInt = 1;
