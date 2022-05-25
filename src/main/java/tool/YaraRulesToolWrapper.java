@@ -151,7 +151,7 @@ public class YaraRulesToolWrapper extends Tool implements ITool {
 
 		String[] cmd = {"yara",
 				"/home/rules/"+ruleName+"_index.yar",
-				projectLocation.toFile().getName()};
+				projectLocation.toAbsolutePath().toString()};
 
 		LOGGER.info(Arrays.toString(cmd));
 		String output = null;
