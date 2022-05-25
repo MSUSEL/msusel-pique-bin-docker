@@ -47,7 +47,7 @@ public class YaraRulesToolWrapperTest {
         Path resources = Paths.get(prop.getProperty("blankqm.filepath")).getParent();
 		Tool yara = new YaraRulesToolWrapper(resources);
 
-        Path testBin = Paths.get("src/test/resources/benchmark/systemd-hwdb");
+        Path testBin = Paths.get("./src/test/resources/benchmark/systemd-hwdb");
         
         Path analysisOutput = yara.analyze(testBin);
 
@@ -72,7 +72,7 @@ public class YaraRulesToolWrapperTest {
         Path resources = Paths.get(prop.getProperty("blankqm.filepath")).getParent();
 		Tool yara = new YaraRulesToolWrapper(resources);
         
-		Path testBin = Paths.get("src/test/resources/emptyDir/fake");
+		Path testBin = Paths.get("./src/test/resources/emptyDir/fake");
 		
         Path analysisOutput = yara.analyze(testBin);
         Map<String,Diagnostic> output = yara.parseAnalysis(analysisOutput);
@@ -91,7 +91,7 @@ public class YaraRulesToolWrapperTest {
         Path resources = Paths.get(prop.getProperty("blankqm.filepath")).getParent();
 		Tool yara = new YaraRulesToolWrapper(resources);
 
-        Path testBin = Paths.get("src/test/resources/basicBinary");
+        Path testBin = Paths.get("./src/test/resources/basicBinary");
         
         Path analysisOutput = yara.analyze(testBin);
 
@@ -114,7 +114,7 @@ public class YaraRulesToolWrapperTest {
         Path resources = Paths.get(prop.getProperty("blankqm.filepath")).getParent();
 		Tool yara = new YaraRulesToolWrapper(resources);
 
-        Path testBin = Paths.get("src/test/resources/benchmark/systemd-hwdb");
+        Path testBin = Paths.get("./src/test/resources/benchmark/systemd-hwdb");
         
         //Analyze several times
         Path analysisOutput = yara.analyze(testBin);
