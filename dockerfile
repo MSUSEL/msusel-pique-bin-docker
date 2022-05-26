@@ -98,7 +98,7 @@ RUN mvn install
 WORKDIR "/home"
 RUN git clone https://github.com/MSUSEL/msusel-pique-bin-docker
 WORKDIR "/home/msusel-pique-bin-docker"
-RUN mvn package
+RUN mvn package -Dmaven.test.skip
 
 
 ##### secret sauce
