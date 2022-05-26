@@ -33,6 +33,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.commons.io.FilenameUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,26 +56,35 @@ public class SingleProjectEvaluator extends ASingleProjectEvaluator {
 
     private Project project;
 
-    public SingleProjectEvaluator(String propertiesPath){ 	
-    	init(propertiesPath);
+    //default properties location
+    @Getter @Setter
+    private String propertiesLocation = "src/main/resources/pique-properties-default.properties";
+
+    public SingleProjectEvaluator(String propertiesPath, String projectToAnalyze){
+        propertiesLocation = propertiesPath;
+    	init(projectToAnalyze);
+    }
+
+    public SingleProjectEvaluator(String projectToAnalyze){
+        init(projectToAnalyze);
     }
     
     public SingleProjectEvaluator(){ 	
     	init(null);
     }
 
-    public void init(String propertiesPath){
+    public void init(String projectLocation){
     	LOGGER.info("Starting Analysis");
     	Properties prop = null;
 		try {
-			prop = propertiesPath==null ? PiqueProperties.getProperties() : PiqueProperties.getProperties(propertiesPath);
+			prop = propertiesLocation==null ? PiqueProperties.getProperties() : PiqueProperties.getProperties(propertiesLocation);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 
-        Path projectRoot = Paths.get(prop.getProperty("project.root"));
+        Path projectRoot = Paths.get(projectLocation);
         Path resultsDir = Paths.get(prop.getProperty("results.directory"));
 
         LOGGER.info("Project to analyze: " + projectRoot.toString());

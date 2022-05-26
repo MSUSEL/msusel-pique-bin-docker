@@ -94,9 +94,9 @@ public class helperFunctions {
 	public static String[] getCWE(String cve) {
 		String cwe = "";
 		String[] cves = cve.split(" ");
-		
-		Properties prop = PiqueProperties.getProperties();
-		String pathToScript = prop.getProperty("cveTocwe.location");
+
+		//hard coded for pique binary docker
+		String pathToScript = "src/main/java/utilities/CVEtoCWE.py";
 
 		String[] cmd = new String[cves.length+1];
  		cmd[0] = "python";
