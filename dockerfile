@@ -103,4 +103,4 @@ WORKDIR "/home/msusel-pique-bin-docker"
 
 
 ##### secret sauce
-ENTRYPOINT
+#ENTRYPOINT
