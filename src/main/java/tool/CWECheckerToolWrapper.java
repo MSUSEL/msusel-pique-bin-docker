@@ -30,6 +30,7 @@ import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -80,6 +81,7 @@ public class CWECheckerToolWrapper extends Tool implements ITool {
 		String[] cmd = {"cwe_checker", projectLocation.toAbsolutePath().toString(),
 				"--json", "--quiet"
 		};
+		LOGGER.info(Arrays.toString(cmd));
 		try (BufferedWriter writer = Files.newBufferedWriter(tempResults.toPath())) {
 			out = helperFunctions.getOutputFromProgram(cmd,LOGGER);
 			writer.write(out);

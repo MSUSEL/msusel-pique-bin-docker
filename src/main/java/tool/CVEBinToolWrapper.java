@@ -26,6 +26,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Map;
 
 import org.json.JSONArray;
@@ -71,7 +72,7 @@ public class CVEBinToolWrapper extends Tool implements ITool  {
 					"-i", projectLocation.toAbsolutePath().toString(),
 					"-f", "json",
 					"-o",tempResults.toPath().toAbsolutePath().toString()};
-			
+			LOGGER.info(Arrays.toString(cmd));
 			try {
 				helperFunctions.getOutputFromProgram(cmd,LOGGER);
 			} catch (IOException  e) {

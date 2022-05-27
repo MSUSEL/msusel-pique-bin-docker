@@ -101,8 +101,7 @@ public class SingleProjectEvaluator extends ASingleProjectEvaluator {
         LOGGER.info("output: " + outputPath.getFileName());
         System.out.println("output: " + outputPath.getFileName());
 
-        Path compact = Paths.get("out/compact-output.json");
-        System.out.println("exporting compact: " + project.exportToJson(compact, true));
+        System.out.println("exporting compact: " + project.exportToJson(resultsDir, true));
 
     }
     //region Get / Set
