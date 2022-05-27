@@ -134,8 +134,8 @@ public class YaraRulesToolWrapper extends Tool implements ITool {
 	@Override
 	public Path initialize(Path toolRoot) {
 
-		//check if docker image has been built already
-		final String[] imageCheck = {"ls" +
+		//check if yara is set up
+		final String[] imageCheck = {
 				"yara", "-v"};
 		try {
 			helperFunctions.getOutputFromProgram(imageCheck, LOGGER);

@@ -79,6 +79,8 @@ RUN ldconfig
 WORKDIR "/home" 
 ## yara rules
 RUN git clone https://github.com/Yara-Rules/rules.git
+# hacky workaround I found on https://github.com/TheHive-Project/Cortex-Analyzers/issues/354 for unsupported yara rule MALW_
+RUN for i in `grep -H -R "MALW_AZORULT\.yar" /home/rules/ | grep -Eio "^.+\.yar:" | sed 's/:$//' | sort -u`; do sed -i '/MALW_AZORULT\.yar/d' $i; done
 RUN chmod -R +x rules/
 
 ## pique-bin
