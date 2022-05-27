@@ -74,7 +74,7 @@ public class Wrapper {
                      break;
                      */
                     default:
-                        System.out.println("System arguments not recognized, try --help or -h");
+                        //System.out.println("System arguments not recognized, try --help or -h");
                 }
 
             }

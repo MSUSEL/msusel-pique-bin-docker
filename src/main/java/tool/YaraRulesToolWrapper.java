@@ -135,7 +135,8 @@ public class YaraRulesToolWrapper extends Tool implements ITool {
 	public Path initialize(Path toolRoot) {
 
 		//check if docker image has been built already
-		final String[] imageCheck = {"yara", "-v"};
+		final String[] imageCheck = {"ls" +
+				"yara", "-v"};
 		try {
 			helperFunctions.getOutputFromProgram(imageCheck, LOGGER);
 		}
@@ -150,6 +151,7 @@ public class YaraRulesToolWrapper extends Tool implements ITool {
 	private String runYaraRules(String ruleName, Path projectLocation) {
 
 		String[] cmd = {"yara",
+				"-w", //disable warnings
 				"/home/rules/"+ruleName+"_index.yar",
 				projectLocation.toAbsolutePath().toString()};
 

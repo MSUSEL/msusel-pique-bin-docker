@@ -79,6 +79,7 @@ RUN ldconfig
 WORKDIR "/home" 
 ## yara rules
 RUN git clone https://github.com/Yara-Rules/rules.git
+RUN chmod -R +x rules/
 
 ## pique-bin
 # maven install - install in opt
