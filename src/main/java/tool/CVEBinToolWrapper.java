@@ -69,9 +69,9 @@ public class CVEBinToolWrapper extends Tool implements ITool  {
 			tempResults.getParentFile().mkdirs();
 
 			String[] cmd = {"cve-bin-tool",
-					"-i", projectLocation.toAbsolutePath().toString(),
 					"-f", "json",
-					"-o",tempResults.toPath().toAbsolutePath().toString()};
+					"-o",tempResults.toPath().toAbsolutePath().toString(),
+					projectLocation.toAbsolutePath().toString()};
 			LOGGER.info(Arrays.toString(cmd));
 			try {
 				helperFunctions.getOutputFromProgram(cmd,LOGGER);

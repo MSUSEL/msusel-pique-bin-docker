@@ -54,8 +54,6 @@ import tool.YaraRulesToolWrapper;
 public class SingleProjectEvaluator extends ASingleProjectEvaluator {
 	private static final Logger LOGGER = LoggerFactory.getLogger(SingleProjectEvaluator.class);
 
-    private Project project;
-
     //default properties location
     @Getter @Setter
     private String propertiesLocation = "src/main/resources/pique-properties-default.properties";
