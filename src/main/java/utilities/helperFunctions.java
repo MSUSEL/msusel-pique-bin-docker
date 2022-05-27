@@ -99,7 +99,7 @@ public class helperFunctions {
 		String pathToScript = "src/main/java/utilities/CVEtoCWE.py";
 
 		String[] cmd = new String[cves.length+1];
- 		cmd[0] = "python";
+ 		cmd[0] = "python3";
 		cmd[1] = pathToScript;
 		for (int i = 2;i<cves.length+1;i++) {
 			cmd[i] = cves[i-1];
