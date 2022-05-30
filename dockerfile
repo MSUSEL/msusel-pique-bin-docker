@@ -104,9 +104,9 @@ WORKDIR "/home/msusel-pique-bin-docker"
 RUN mvn package -Dmaven.test.skip
 
 # input for project files
-RUN mkdir "/input"
+VOLUME ["/input"]
 # output for model
-RUN mkdir "/output"
+VOLUME ["/output"]
 
 
 ##### secret sauce
