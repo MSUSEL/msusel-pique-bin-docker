@@ -1,5 +1,7 @@
 package piquebinaries.runnable;
 
+import org.apache.commons.math3.analysis.function.Sin;
+
 public class Wrapper {
 
 
@@ -79,7 +81,8 @@ public class Wrapper {
 
             }
             //last argument, this is a file input
-            new SingleProjectEvaluator(args[args.length-1]);
+            new SingleProjectEvaluator();
+            //new SingleProjectEvaluator(args[args.length-1]);
 
 
         }catch(Exception e){
