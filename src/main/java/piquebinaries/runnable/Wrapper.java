@@ -19,7 +19,7 @@ public class Wrapper {
    }
     public static void main(String[] args){
         try{
-            if (args == null || args.length < 1) {
+            if (args == null || args.length < 0) {
                 throw new IllegalArgumentException("Incorrect input parameters given. " +
                         getHelpMenu());
             }
