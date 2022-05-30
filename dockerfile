@@ -103,6 +103,8 @@ RUN git clone https://github.com/MSUSEL/msusel-pique-bin-docker
 WORKDIR "/home/msusel-pique-bin-docker"
 RUN mvn package -Dmaven.test.skip
 
+RUN mkdir "projectToAnalyze"
+
 
 ##### secret sauce
 #ENTRYPOINT ["java", "-jar", "/home/msusel-pique-bin-docker/target/msusel-pique-bin-0.0.1-jar-with-dependencies.jar"]
