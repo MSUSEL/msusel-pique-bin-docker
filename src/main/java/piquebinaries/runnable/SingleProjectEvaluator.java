@@ -22,14 +22,12 @@
  */
 package piquebinaries.runnable;
 
+import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -95,11 +93,23 @@ public class SingleProjectEvaluator extends ASingleProjectEvaluator {
         ITool cweCheckerTool = new CWECheckerToolWrapper();
         ITool yaraRulesWrapper = new YaraRulesToolWrapper(resources);
         Set<ITool> tools = Stream.of(cveBinTool,cweCheckerTool, yaraRulesWrapper).collect(Collectors.toSet());
-        Path outputPath = runEvaluator(projectRoot, resultsDir, qmLocation, tools);
-        LOGGER.info("output: " + outputPath.getFileName());
-        System.out.println("output: " + outputPath.getFileName());
 
-        System.out.println("exporting compact: " + project.exportToJson(resultsDir, true));
+        Set<Path> projectRoots = new HashSet<>();
+        File[] filesToAssess = projectRoot.toFile().listFiles();
+        for (File f : filesToAssess){
+            if (f.isFile()){
+                projectRoots.add(f.toPath());
+            }
+        }
+        for (Path projectPath : projectRoots){
+            Path outputPath = runEvaluator(projectPath, resultsDir, qmLocation, tools);
+            LOGGER.info("output: " + outputPath.getFileName());
+            System.out.println("output: " + outputPath.getFileName());
+
+            System.out.println("exporting compact: " + project.exportToJson(resultsDir, true));
+        }
+
+
 
     }
     //region Get / Set
