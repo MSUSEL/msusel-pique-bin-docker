@@ -105,9 +105,10 @@ RUN mvn package -Dmaven.test.skip
 
 # input for project files
 VOLUME ["/input"]
+
 # output for model
 VOLUME ["/output"]
 
 
 ##### secret sauce
-#ENTRYPOINT ["java", "-jar", "/home/msusel-pique-bin-docker/target/msusel-pique-bin-0.0.1-jar-with-dependencies.jar"]
+ENTRYPOINT ["java", "-jar", "/home/msusel-pique-bin-docker/target/msusel-pique-bin-0.0.1-jar-with-dependencies.jar"]
