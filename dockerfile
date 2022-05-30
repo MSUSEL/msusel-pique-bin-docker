@@ -103,7 +103,10 @@ RUN git clone https://github.com/MSUSEL/msusel-pique-bin-docker
 WORKDIR "/home/msusel-pique-bin-docker"
 RUN mvn package -Dmaven.test.skip
 
-RUN mkdir "projectToAnalyze"
+# input for project files
+RUN mkdir "/input"
+# output for model
+RUN mkdir "/output"
 
 
 ##### secret sauce
