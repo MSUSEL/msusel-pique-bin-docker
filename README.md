@@ -1,6 +1,6 @@
 [![CodeQL](https://github.com/MSUSEL/msusel-pique-bin/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/MSUSEL/msusel-pique-bin/actions/workflows/codeql-analysis.yml)
 
-# msusel-pique-bin-dockers
+# MSUSEL-PIQUE-BIN-DOCKER
 ## Introduction
 This project is a docker-wrapped operationalized PIQUE model for the assessment of security quality in binary files. 
 
