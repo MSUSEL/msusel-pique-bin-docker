@@ -95,7 +95,7 @@ RUN export PATH="/opt/apache-maven-3.8.5/bin:$PATH"
 WORKDIR "/home"
 RUN git clone https://github.com/MSUSEL/msusel-pique.git
 WORKDIR "/home/msusel-pique"
-RUN mvn install
+RUN mvn install -Dmaven.test.skip
 
 ## pique bin (docker) install
 WORKDIR "/home"
@@ -103,10 +103,14 @@ RUN git clone https://github.com/MSUSEL/msusel-pique-bin-docker
 WORKDIR "/home/msusel-pique-bin-docker"
 RUN mvn package -Dmaven.test.skip
 
+#create input directory
+RUN mkdir "/input"
+
 # input for project files
 VOLUME ["/input"]
 
-
+# create output directory
+RUN mkdir "/output"
 # output for model
 VOLUME ["/output"]
 
