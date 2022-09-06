@@ -63,10 +63,10 @@ RUN pip install cve-bin-tool
 
 ## yara installs
 # taken from https://yara.readthedocs.io/en/stable/gettingstarted.html#compiling-and-installing-yara
-RUN wget "https://github.com/VirusTotal/yara/archive/refs/tags/v4.2.0.tar.gz"
-RUN tar -zxf v4.2.0.tar.gz
-RUN rm v4.2.0.tar.gz
-WORKDIR "/home/yara-4.2.0"
+RUN wget "https://github.com/VirusTotal/yara/archive/refs/tags/v4.2.3.tar.gz"
+RUN tar -zxf v4.2.3.tar.gz
+RUN rm v4.2.3.tar.gz
+WORKDIR "/home/yara-4.2.3"
 RUN ./bootstrap.sh
 RUN ./configure
 RUN make
@@ -86,7 +86,7 @@ RUN chmod -R +x rules/
 ## pique-bin
 # maven install - install in opt
 WORKDIR "/opt"
-RUN wget "https://dlcdn.apache.org/maven/maven-3/3.8.5/binaries/apache-maven-3.8.5-bin.tar.gz"
+RUN wget "https://archive.apache.org/dist/maven/maven-3/3.8.5/binaries/apache-maven-3.8.5-bin.tar.gz"
 RUN tar xzvf apache-maven-3.8.5-bin.tar.gz
 RUN rm apache-maven-3.8.5-bin.tar.gz
 RUN export PATH="/opt/apache-maven-3.8.5/bin:$PATH"
@@ -106,7 +106,6 @@ RUN mvn package -Dmaven.test.skip
 # input for project files
 VOLUME ["/input"]
 
-
 # output for model
 VOLUME ["/output"]
 
@@ -114,4 +113,4 @@ RUN chmod -R +x /input
 RUN chmod -R +x /output
 
 ##### secret sauce
-ENTRYPOINT ["java", "-jar", "/home/msusel-pique-bin-docker/target/msusel-pique-bin-0.0.1-jar-with-dependencies.jar"]
+#ENTRYPOINT ["java", "-jar", "/home/msusel-pique-bin-docker/target/msusel-pique-bin-0.0.1-jar-with-dependencies.jar"]
