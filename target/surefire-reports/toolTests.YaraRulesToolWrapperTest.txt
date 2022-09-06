@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: toolTests.YaraRulesToolWrapperTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 2, Skipped: 1, Time elapsed: 0.218 sec <<< FAILURE!
-ToolShouldHaveConsistentFindings(toolTests.YaraRulesToolWrapperTest)  Time elapsed: 0.114 sec  <<< ERROR!
+Tests run: 4, Failures: 0, Errors: 2, Skipped: 1, Time elapsed: 0.225 sec <<< FAILURE!
+ToolShouldHaveConsistentFindings(toolTests.YaraRulesToolWrapperTest)  Time elapsed: 0.109 sec  <<< ERROR!
 java.lang.NullPointerException
 	at tool.YaraRulesToolWrapper.analyze(YaraRulesToolWrapper.java:71)
 	at toolTests.YaraRulesToolWrapperTest.ToolShouldHaveConsistentFindings(YaraRulesToolWrapperTest.java:122)
@@ -39,7 +39,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-ToolShouldHaveFindingsOnBinaryWithRuleViolations(toolTests.YaraRulesToolWrapperTest)  Time elapsed: 0.028 sec  <<< ERROR!
+ToolShouldHaveFindingsOnBinaryWithRuleViolations(toolTests.YaraRulesToolWrapperTest)  Time elapsed: 0.04 sec  <<< ERROR!
 java.lang.NullPointerException
 	at tool.YaraRulesToolWrapper.analyze(YaraRulesToolWrapper.java:71)
 	at toolTests.YaraRulesToolWrapperTest.ToolShouldHaveFindingsOnBinaryWithRuleViolations(YaraRulesToolWrapperTest.java:53)

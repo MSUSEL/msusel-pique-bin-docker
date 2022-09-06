@@ -24,10 +24,14 @@ package tool;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,6 +43,7 @@ import pique.analysis.ITool;
 import pique.analysis.Tool;
 import pique.model.Diagnostic;
 import pique.model.Finding;
+import pique.utility.PiqueProperties;
 import utilities.helperFunctions;
 
 /**
@@ -50,9 +55,11 @@ import utilities.helperFunctions;
  */
 public class CVEBinToolWrapper extends Tool implements ITool  {
 	private static final Logger LOGGER = LoggerFactory.getLogger(CVEBinToolWrapper.class);
+	private String nvdApiKey;
 			
-	public CVEBinToolWrapper() {
+	public CVEBinToolWrapper(String nvdApiKeyPath) {
 		super("cve-bin-tool", null);
+		this.nvdApiKey = parseKey(nvdApiKeyPath);
 	}
 
 	// Methods
@@ -69,6 +76,7 @@ public class CVEBinToolWrapper extends Tool implements ITool  {
 			tempResults.getParentFile().mkdirs();
 
 			String[] cmd = {"cve-bin-tool",
+					"--nvd-api-key", nvdApiKey,
 					"-f", "json",
 					"-o",tempResults.toPath().toAbsolutePath().toString(),
 					projectLocation.toAbsolutePath().toString()};
@@ -194,6 +202,27 @@ public class CVEBinToolWrapper extends Tool implements ITool  {
 			
 			return severityInt;
 		}
+
+	/***
+	 * simple utility to parse a file containing a one-liner NVD api key into class variable nvdApiKey
+	 * @param path path where nvd api key exists, modified in config
+	 * @return nvd api key
+	 */
+	private String parseKey(String path){
+		//https://mkyong.com/java/java-convert-file-to-string/
+		String content = "";
+		try (Stream<String> lines = Files.lines(Paths.get(path))) {
+			// Formatting like \r\n will be lost
+
+			// UNIX \n, WIndows \r\n
+			content = lines.collect(Collectors.joining(System.lineSeparator()));
+			System.out.println(content);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return content;
+	}
 		
 		 
 }

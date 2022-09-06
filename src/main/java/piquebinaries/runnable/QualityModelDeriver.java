@@ -83,7 +83,7 @@ public class QualityModelDeriver extends AQualityModelDeriver {
 
         Path resources = Paths.get(prop.getProperty("blankqm.filepath")).getParent();
         
-        ITool cvebinToolWrapper = new CVEBinToolWrapper();
+        ITool cvebinToolWrapper = new CVEBinToolWrapper(prop.getProperty("nvd-api-key"));
         ITool cweCheckerWrapper = new CWECheckerToolWrapper();
         ITool yaraRulesWrapper = new YaraRulesToolWrapper(resources);
         Set<ITool> tools = Stream.of(cvebinToolWrapper,cweCheckerWrapper, yaraRulesWrapper).collect(Collectors.toSet());

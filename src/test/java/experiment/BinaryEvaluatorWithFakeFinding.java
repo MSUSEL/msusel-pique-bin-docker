@@ -71,7 +71,7 @@ public class BinaryEvaluatorWithFakeFinding {
         Path qmLocation = Paths.get("out/AllMSPBinarySecurityQualityModelCWE-699.json");
         Path resources = Paths.get(prop.getProperty("blankqm.filepath")).getParent();
         
-        ITool cvebintool = new CVEBinToolWrapper();
+        ITool cvebintool = new CVEBinToolWrapper(prop.getProperty("nvd-api-key"));
         ITool cveBinToolAndFake = new RandomFakeFindingWrapper(cvebintool,10);
         ITool cweCheckerTool = new CWECheckerToolWrapper();
         ITool yaraRulesWrapper = new YaraRulesToolWrapper(resources);

@@ -39,7 +39,7 @@ public class ToolRunner {
         //init tools
         ITool cweCheckerTool = new CWECheckerToolWrapper();
         ITool yaraRulesWrapper = new YaraRulesToolWrapper(resources);
-        ITool cveBinTool = new CVEBinToolWrapper();
+        ITool cveBinTool = new CVEBinToolWrapper(prop.getProperty("nvd-api-key-path"));
         Set<ITool> tools = Stream.of(cveBinTool,cweCheckerTool, yaraRulesWrapper).collect(Collectors.toSet());
 
         

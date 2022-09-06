@@ -24,3 +24,6 @@ hs_err_pid*
 
 # developer environment files
 *.idea
+
+# key files
+keys/nvd-api-key.txt

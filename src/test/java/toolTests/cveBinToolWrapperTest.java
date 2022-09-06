@@ -42,7 +42,7 @@ public class cveBinToolWrapperTest {
 	@Ignore //Apparently there are no cves associated with this binary???
 	@Test
 	public void ToolShouldHaveFindingsOnBinaryWithCVEs() {
-		Tool cveBinTool = new CVEBinToolWrapper();
+		Tool cveBinTool = new CVEBinToolWrapper("keys/nvd-api-key.txt");
 
         Path testBin = Paths.get("src/test/resources/benchmark/systemd-hwdb");
         
@@ -65,7 +65,7 @@ public class cveBinToolWrapperTest {
 	
 	@Test
 	public void ToolShouldReturnNoFindingsIfNoBinariesExist() {
-		Tool cveBinTool = new CVEBinToolWrapper();
+		Tool cveBinTool = new CVEBinToolWrapper("keys/nvd-api-key.txt");
 		
         Path testBin = Paths.get("src/test/resources/benchmark/emptyDir");
     	Path analysisOutput = cveBinTool.analyze(testBin);
@@ -84,7 +84,7 @@ public class cveBinToolWrapperTest {
 	@Ignore
 	@Test
 	public void ToolShouldHaveNoFindingsOnSimpleCleanBinary() {
-		Tool cveBinTool = new CVEBinToolWrapper();
+		Tool cveBinTool = new CVEBinToolWrapper("keys/nvd-api-key.txt");
 
         Path testBin = Paths.get("src/test/resources/basicBinary");
         

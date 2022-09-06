@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: toolTests.cveBinToolWrapperTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 18.933 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0.041 sec

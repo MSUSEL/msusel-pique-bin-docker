@@ -89,7 +89,7 @@ public class SingleProjectEvaluator extends ASingleProjectEvaluator {
         Path resources = Paths.get(prop.getProperty("blankqm.filepath"));
         resources = resources.toAbsolutePath().getParent();
         
-        ITool cveBinTool = new CVEBinToolWrapper();
+        ITool cveBinTool = new CVEBinToolWrapper(prop.getProperty("nvd-api-key-path"));
         ITool cweCheckerTool = new CWECheckerToolWrapper();
         ITool yaraRulesWrapper = new YaraRulesToolWrapper(resources);
         Set<ITool> tools = Stream.of(cveBinTool,cweCheckerTool, yaraRulesWrapper).collect(Collectors.toSet());

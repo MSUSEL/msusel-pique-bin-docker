@@ -1,0 +1,3 @@
+# Ignore this directory, to be used for testing only
+*
+!.gitignore

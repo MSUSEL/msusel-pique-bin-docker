@@ -77,7 +77,7 @@ public class ModelSensTest {
         
         ITool cweCheckerTool = new CWECheckerToolWrapper();
         ITool yaraRulesWrapper = new YaraRulesToolWrapper(resources);
-        ITool cveBinTool = new CVEBinToolWrapper();
+        ITool cveBinTool = new CVEBinToolWrapper(prop.getProperty("nvd-api-key-path"));
         Set<ITool> tools = Stream.of(cveBinTool,cweCheckerTool, yaraRulesWrapper).collect(Collectors.toSet());
         
         Project outputProj = runEvaluator(projectRoot, resultsDir, qmLocation, tools);
@@ -92,7 +92,7 @@ public class ModelSensTest {
         for (ModelNode d : diagnostics) {
         	cweCheckerTool = new CWECheckerToolWrapper();
             yaraRulesWrapper = new YaraRulesToolWrapper(resources);
-            cveBinTool = new CVEBinToolWrapper();
+            cveBinTool = new CVEBinToolWrapper(prop.getProperty("nvd-api-key-path"));
             
         	String toolName = ((Diagnostic)d).getToolName();
         	

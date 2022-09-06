@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM alpine:3.14
 
 # need for tzdata config
 ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC
@@ -6,30 +6,30 @@ ENV RUST_VERSION=1.60.0
 #add rust to PATH
 ENV PATH="/root/.cargo/bin:/opt/apache-maven-3.8.5/bin:$PATH"
 
-RUN apt-get update && apt-get install -y \
+RUN apk update && apk add \
 	## pique bin
-	openjdk-8-jdk \
+	openjdk8 \
 	## commenting for now because no operational PIQUE model uses GAMs
 	# r-base \
 	# r-base-core \
 	# r-recommended \
 	# r-base-dev \
 	## yara
-	libssl-dev \
+	libressl-dev \
 	automake \
 	libtool \
 	make \
-	build-essential \
+	alpine-sdk \
 	gcc \
-	pkg-config \
+	pkgconfig \
 	wget \
 	git \
 	## cwe-checker
 	unzip \
 	#java 11 for ghidra
-	openjdk-11-jdk \
+	openjdk11 \
 	## cve-bin-tool
-	python3-pip
+	py3-pip
 
 # move to home for a fresh start
 WORKDIR "/home"
@@ -39,7 +39,8 @@ WORKDIR "/home"
 # Rust install -- mostly taken from Rust documentation at https://forge.rust-lang.org/infra/other-installation-methods.html
 RUN wget "https://static.rust-lang.org/rustup/dist/x86_64-unknown-linux-gnu/rustup-init"
 RUN chmod +x rustup-init
-RUN ./rustup-init -y --no-modify-path --profile minimal --default-toolchain $RUST_VERSION --default-host x86_64-unknown-linux-gnu
+
+#RUN ./rustup-init -y --no-modify-path --profile minimal --default-toolchain $RUST_VERSION --default-host x86_64-unknown-linux-gnu
 RUN rm rustup-init
 
 # Ghidra install -- most taken from https://github.com/blacktop/docker-ghidra/blob/master/alpine/Dockerfile
