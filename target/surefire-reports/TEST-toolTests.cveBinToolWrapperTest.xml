@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="toolTests.cveBinToolWrapperTest" time="0.123" errors="0" skipped="2">
+<testsuite tests="3" failures="0" name="toolTests.cveBinToolWrapperTest" time="0.159" errors="0" skipped="2">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.16+8-post-Ubuntu-0ubuntu120.04"/>
@@ -61,11 +61,11 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="toolTests.cveBinToolWrapperTest" name="ToolShouldReturnNoFindingsIfNoBinariesExist" time="0.041"/>
-  <testcase classname="toolTests.cveBinToolWrapperTest" name="ToolShouldHaveFindingsOnBinaryWithCVEs" time="0.041">
+  <testcase classname="toolTests.cveBinToolWrapperTest" name="ToolShouldReturnNoFindingsIfNoBinariesExist" time="0.053"/>
+  <testcase classname="toolTests.cveBinToolWrapperTest" name="ToolShouldHaveFindingsOnBinaryWithCVEs" time="0.053">
     <skipped/>
   </testcase>
-  <testcase classname="toolTests.cveBinToolWrapperTest" name="ToolShouldHaveNoFindingsOnSimpleCleanBinary" time="0.041">
+  <testcase classname="toolTests.cveBinToolWrapperTest" name="ToolShouldHaveNoFindingsOnSimpleCleanBinary" time="0.053">
     <skipped/>
   </testcase>
 </testsuite>
