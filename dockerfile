@@ -113,4 +113,4 @@ RUN chmod -R +x /input
 RUN chmod -R +x /output
 
 ##### secret sauce
-#ENTRYPOINT ["java", "-jar", "/home/msusel-pique-bin-docker/target/msusel-pique-bin-0.0.1-jar-with-dependencies.jar"]
+ENTRYPOINT ["java", "-jar", "/home/msusel-pique-bin-docker/target/msusel-pique-bin-0.0.1-jar-with-dependencies.jar"]
