@@ -26,4 +26,4 @@ hs_err_pid*
 *.idea
 
 # key files
-keys/nvd-api-key.txt
+input/keys/nvd-api-key.txt
