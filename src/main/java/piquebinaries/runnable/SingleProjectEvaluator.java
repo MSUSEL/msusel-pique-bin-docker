@@ -66,7 +66,7 @@ public class SingleProjectEvaluator extends ASingleProjectEvaluator {
     }
     
     public SingleProjectEvaluator(){ 	
-    	init("/input");
+    	init("/input/projects");
     }
 
     public void init(String projectLocation){
