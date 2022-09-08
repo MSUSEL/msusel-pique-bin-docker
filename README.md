@@ -18,9 +18,9 @@ ___
 Docker 20.10.14+
 
 ## Running
-1. Download the file msusel-pique-bin-docker.zip (shown in tagged releases), extract it, and open a terminal window in the base directory (msusel-pique-bin-docker/)
+1. Download the file pique-bin-docker.zip (shown in tagged releases), extract it, and open a terminal window in the base directory (pique-bin-docker/)
 2. With Docker 20.10.14+ installed, run the following command to construct the docker image: `docker build --no-cache -t pique-bin-docker:1.1 .`. This command takes approximately 10 minutes to run.
-3. Place binary files you would like to analyze in the "msusel-pique-bin-docker/input/projects" directory
-4. Place a text file that contains your NVD API key in the "msusel-pique-bin-docker/input/keys" directory. The NVD API key is necessary for cve-bin-tool to communicate with the NVD database. A key can be generated [here](https://nvd.nist.gov/developers/request-an-api-key).
+3. Place binary files you would like to analyze in the "pique-bin-docker/input/projects" directory
+4. Place a text file that contains your NVD API key in the "pique-bin-docker/input/keys" directory. The NVD API key is necessary for cve-bin-tool to communicate with the NVD database. A key can be generated [here](https://nvd.nist.gov/developers/request-an-api-key).
 5. Run the docker image with `docker run -it --rm -v /path/to/input/directory:/input -v /path/to/output/directory:/output pique-bin-docker:1.1`. This command can take a while to run if the size of your binaries are larger than >750 kb.
-6. Output (two .json files) will be generated in the "msusel-pique-bin-docker/output" directory. 
+6. Output (two .json files) will be generated in the "/path/to/output/directory" directory. 
