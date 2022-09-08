@@ -97,7 +97,9 @@ public class SingleProjectEvaluator extends ASingleProjectEvaluator {
         Set<Path> projectRoots = new HashSet<>();
         File[] filesToAssess = projectRoot.toFile().listFiles();
         for (File f : filesToAssess){
-            if (f.isFile()){
+
+            if (f.isFile() && !f.getName().equals(".gitignore")){
+                //skip .gitignore file which is included for convenience of packaging/distributing
                 projectRoots.add(f.toPath());
             }
         }
