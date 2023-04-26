@@ -52,6 +52,7 @@ RUN chmod +x /ghidra/ghidraRun
 # cwe-checker -- difficult because the latest release was a while ago and changes are not being updated
 RUN git clone "https://github.com/fkie-cad/cwe_checker.git"
 WORKDIR "/home/cwe_checker"
+RUN git checkout tags/v0.6
 RUN make all GHIDRA_PATH=/ghidra
 
 
