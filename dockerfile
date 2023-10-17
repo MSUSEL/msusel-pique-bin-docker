@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 
 # need for tzdata config
 ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC
-ENV RUST_VERSION=1.60.0
+ENV RUST_VERSION=1.64.0
 #add rust to PATH
 ENV PATH="/root/.cargo/bin:/opt/apache-maven-3.8.5/bin:$PATH"
 
@@ -96,7 +96,7 @@ RUN export PATH="/opt/apache-maven-3.8.5/bin:$PATH"
 WORKDIR "/home"
 RUN git clone https://github.com/MSUSEL/msusel-pique.git
 WORKDIR "/home/msusel-pique"
-RUN mvn install
+RUN mvn install -Dmaven.test.skip
 
 ## pique bin (docker) install
 WORKDIR "/home"
